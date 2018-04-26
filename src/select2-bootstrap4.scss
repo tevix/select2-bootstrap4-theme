@@ -103,9 +103,22 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
 @mixin dropdown-arrow {
   .select2-selection--single {
     .select2-selection__arrow b {
-      border-color: transparent transparent $s2bs-dropdown-arrow-color transparent;
-      border-width: 0 $s2bs-caret-width-large $s2bs-caret-width-large $s2bs-caret-width-large;
-    }
+      //border-color: transparent transparent $s2bs-dropdown-arrow-color transparent;
+      //border-width: 0 $s2bs-caret-width-large $s2bs-caret-width-large $s2bs-caret-width-large;
+
+      
+        font-family: 'FontAwesome';
+        content: "\f107" !important;
+        border: none !important;
+        position: relative;
+        top: 1px;
+        right: 0px;
+        padding: 0 2px 0 6px;
+        margin: 0 0.3em 0 0;
+        vertical-align: 0; }
+
+
+    
   }
 }
 
@@ -309,17 +322,37 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
       top: 0;
       width: $s2bs-caret-width-base;
 
-      b {
+      b::after {
+
+          display: inline-block;
+          width: 0;
+          height: 0;
+          margin-left: 0.255em;
+          vertical-align: 0.255em;
+          font-family: 'FontAwesome' !important;
+          content: "\f107" !important;
+          border: none !important;
+          position: relative;
+          top: 25%;
+          left: -5px;
+          padding: 0 2px 0 6px;
+          margin: 0 0.3em 0 0;
+          vertical-align: 0; 
+
+/*
         border-color: $s2bs-dropdown-arrow-color transparent transparent transparent;
         border-style: solid;
         border-width: $s2bs-caret-width-base $s2bs-caret-width-base 0 $s2bs-caret-width-base;
+
         height: 0;
         left: 0;
+
         margin-left: -$s2bs-caret-width-base;
         margin-top: -$s2bs-caret-width-base/2;
-        position: absolute;
+      position: absolute;
         top: 50%;
         width: 0;
+*/
       }
     }
 
